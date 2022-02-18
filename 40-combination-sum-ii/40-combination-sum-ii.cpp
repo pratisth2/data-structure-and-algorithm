@@ -14,12 +14,14 @@ public:
             {
             return;
                }
-            if(j==i || candidates[j]!=candidates[j-1])
+            if(j>i && candidates[j]==candidates[j-1]) // to avoid dupliacye
             {
+             continue;
+            }
             ans.push_back(candidates[j]);
             comb(v,ans,candidates,target-candidates[j],j+1);
             ans.pop_back();
-               }
+               
     
     }
     }
