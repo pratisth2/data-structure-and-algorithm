@@ -1,32 +1,23 @@
 class Solution {
 public:
     vector<int> partitionLabels(string s) {
-        int left=0;
-        int right=-1;
-        int i=0;
+     unordered_map<char,int>m;
         vector<int>v;
-         while(right<0 || right<s.length()-1)
-         {
-             for(int j=s.length()-1;j>=right;j--)
-             {
-                 if(s[i]==s[j])
-                 {
-                     if(right<0 || j>right)
-                     {
-                     right=j;   cout<<right;
-                     }
-                 }
-                 
-             }
-             i++;
-               if(i>=right || right==s.length()-1)
+        for(int i=0;i<s.length();i++)
         {
-            v.push_back(right-left+1);
-            left=right+1;
-            i=right+1;
+            m[s[i]]=i;
         }
-         }
-       
+        int prev=-1;
+        int mx=0;
+        for(int i=0;i<s.length();i++)
+        {
+            mx=max(mx,m[s[i]]);
+            if(mx==i)
+            {
+                v.push_back(mx-prev);
+                prev=mx;
+            }
+        }
         return v;
     }
 };
