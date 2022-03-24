@@ -1,15 +1,28 @@
 class Solution {
 public:
-    int climbStairs(int n) {
-        vector<int>dp(n+1,0);
-         int prev=1;
-        int prev2=1;
-        for(int i=2;i<=n;i++)
+    int climb(int n, vector<int>&dp)
+    {
+        if(n==0)
         {
-            int curr=prev+prev2;
-            prev2=prev;
-            prev=curr;
+            return 1;
         }
-        return prev;
+          if(n<0)
+          {
+           return 0;
+           }
+        if(dp[n]!=-1)
+        {
+            return dp[n];
+        }
+      //  cout<<"hello"<<endl;
+        int a=climb(n-1,dp);
+        int b=climb(n-2,dp);
+        int c=a+b;
+        dp[n]=c;
+        return c;
+    }
+    int climbStairs(int n) {
+        vector<int>dp(n+1,-1);
+       return climb(n,dp);
     }
 };
