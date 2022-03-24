@@ -14,15 +14,18 @@ public:
     //    return climb(n,dp);
     // }
       int climbStairs(int n) {
-       vector<int>dp(n+1);
-       dp[0]=1;   
+   //    vector<int>dp(n+1);
+   //    dp[0]=1;   
+          int one=1,two=0;
        for(int i=1;i<=n;i++)
        {
            int onestep=0, twostep=0;
-           onestep=dp[i-1];
-           if(i-2>=0) twostep=dp[i-2];
-           dp[i]=onestep+twostep;
+           onestep=one;
+           if(i-2>=0) twostep=two;
+           int curr=onestep+twostep;
+           two=one;
+           one=curr;
        }
-       return dp[n];
+       return one;
     }
 };
