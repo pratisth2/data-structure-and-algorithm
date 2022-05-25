@@ -14,21 +14,22 @@ class Solution
     public:
     int peakElement(int arr[], int n)
     {
-       int l=0;
-       int h=n-1;
-       while(l<h)
-       {
-           int mid=l+(h-l)/2;
-           if( arr[mid]>arr[mid+1])
-           {
-               h=mid;
-           }
-           else
-           {
-               l=mid+1;
-           }
-       }
-       return l;
+       // Your code here
+      int l=0;
+      int h=n-1;
+      while(l<h)
+      {
+          int mid=l+(h-l)/2;
+          if(arr[mid]>arr[mid+1])
+          {
+              h=mid;
+          }
+          else
+          {
+              l=mid+1;
+          }
+      }
+      return l;
     }
 };
 
@@ -56,18 +57,17 @@ int main() {
 		    cout<<0<<endl;
 		else
 		{
-		if(n==1 and A==0)
-		f=1;
-		else
-		if(A==0 and a[0]>=a[1])
-		f=1;
-		else if(A==n-1 and a[n-1]>=a[n-2])
-		f=1;
-		else if(a[A]>=a[A+1] and a[A]>= a[A-1])
-		f=1;
-		else
-		f=0;
-		cout<<f<<endl;
+    		if(n==1 and A==0)
+    		    f=1;
+    		else if(A==0 and a[0]>=a[1])
+    		    f=1;
+    		else if(A==n-1 and a[n-1]>=a[n-2])
+    		    f=1;
+    		else if(a[A]>=a[A+1] and a[A]>= a[A-1])
+    		    f=1;
+    		else
+    		    f=0;
+    		cout<<f<<endl;
 		}
 		
 	}
