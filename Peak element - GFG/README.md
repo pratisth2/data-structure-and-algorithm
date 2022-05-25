@@ -1,5 +1,5 @@
 # Peak element
-##  Easy 
+## Easy 
 <div class="problem-statement" style="user-select: auto;">
                 <p style="user-select: auto;"></p><p style="user-select: auto;"><span style="font-size: 18px; user-select: auto;">An element is called a peak element if its value&nbsp;is not smaller than the value of&nbsp;its adjacent elements(if they exists).<br style="user-select: auto;">
 Given an array <strong style="user-select: auto;">arr[]</strong> of size&nbsp;<strong style="user-select: auto;">N</strong>,&nbsp;find the index of any one of its&nbsp;peak elements.<br style="user-select: auto;">
