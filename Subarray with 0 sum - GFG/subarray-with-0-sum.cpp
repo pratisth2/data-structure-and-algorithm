@@ -14,16 +14,16 @@ class Solution{
     bool subArrayExists(int arr[], int n)
     {
         //Your code here
-       unordered_set<int>s;
+       unordered_set<int>s;  // using prefix sum
        int sum=0;
        for(int i=0;i<n;i++)
        {
            sum+=arr[i];
-           if(s.find(sum)!=s.end() || sum==0)
+           if(s.find(sum)!=s.end() || sum==0) // by chance agar sum karte time sum prsent hota h set me toh return true
            {
                return true;
            }
-           s.insert(sum);
+           s.insert(sum);  // saare sum daalte chal rahe
        }
        return false;
     }
