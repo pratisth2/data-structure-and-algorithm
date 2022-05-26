@@ -2,20 +2,21 @@ class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
         unordered_map<int,int>m;
-     
-        int sum=0;
-          m[sum]=1;
-        int ans=0;
+         int sum=0;
+        int count=0;
         for(int i=0;i<nums.size();i++)
         {
             sum+=nums[i];
-            int rsum=sum-k;
-            if(m.find(rsum)!=m.end())
+            if(m.find(sum-k)!=m.end())
             {
-                ans+=m[rsum];
+                count+=m[sum-k];
+            }
+            if(sum==k)
+            {
+                count++;
             }
             m[sum]++;
         }
-        return ans;
+        return count;
     }
 };  
