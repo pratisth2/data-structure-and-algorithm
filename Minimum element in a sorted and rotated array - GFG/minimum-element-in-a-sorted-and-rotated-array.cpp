@@ -16,7 +16,6 @@ public:
            int mid=l+(h-l)/2;
            if(arr[mid]<arr[n-1])
            {
-               ans=mid;
                h=mid;
            }
            else
