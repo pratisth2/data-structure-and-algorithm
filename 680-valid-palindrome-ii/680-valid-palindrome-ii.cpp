@@ -1,7 +1,8 @@
 class Solution {
 public:
-    bool ispalin(string s, int i, int j)
-    {
+  bool ispalin(int i, int j, string s)
+  {
+      
         while(i<j)
         {
             if(s[i]==s[j])
@@ -10,29 +11,24 @@ public:
                 j--;
             }
             else
-            {
                 return false;
-            }
-            
         }
-        return true;
-    }
+      return true;
+  }
     bool validPalindrome(string s) {
-    int i=0;
+        int i=0;
         int j=s.size()-1;
         while(i<j)
         {
             if(s[i]==s[j])
             {
-            i++;
+                i++;
                 j--;
             }
             else
-            {
-                return ispalin(s,i+1,j)|| ispalin(s,i,j-1);
-                }
-            
-    }
+                return ispalin(i+1,j,s) || ispalin(i,j-1,s);
+        }
         return true;
     }
+   
 };
