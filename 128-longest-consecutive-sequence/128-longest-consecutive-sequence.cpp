@@ -6,22 +6,20 @@ public:
         {
             s.insert(nums[i]);
         }
-        int longeststreak=0;
-        for(auto i:nums)
+      
+        int ans=1;
+        int mx=0;
+        for(int i=0;i<nums.size();i++)
         {
-            if(!s.count(i-1))
+            int start=nums[i];
+            if(s.find(start-1) !=s.end()) continue;
+            while(s.find(start)!=s.end())
             {
-                int curr=i;
-                int currstreak=1;
-                while(s.count(curr+1))
-                {
-                    curr+=1;
-                    currstreak+=1;
-                }
-                longeststreak=max(longeststreak,currstreak);
+                start++;
             }
+             ans=  start-nums[i];
+            mx=max(mx,ans);
         }
-        return longeststreak;
-        
+        return mx;
     }
 };
