@@ -14,10 +14,10 @@ public:
             {
                 if(nums[s]+nums[e]==t)
                 {
-                    
-                    ans.push_back({nums[s],nums[e],nums[i]});
-                    while(s<e && nums[s]==nums[s+1]) s++;
+                     while(s<e && nums[s]==nums[s+1]) s++;
                      while(s<e && nums[e]==nums[e-1]) e--;
+                    ans.push_back({nums[s],nums[e],nums[i]});
+                   
                     s++;
                     e--;
                 }
