@@ -11,9 +11,9 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        ListNode *temp=head;
-        int l=0;
-        while(temp!=NULL)
+ ListNode* temp=head;
+        int l=1;
+        while(temp->next!=NULL)
         {
             temp=temp->next;
             l++;
@@ -21,24 +21,15 @@ public:
         cout<<l;
         ListNode* slow=head;
         ListNode* fast=head;
-        if(l%2==1)
-        {
-            while(fast!=NULL &&  fast->next!=NULL)
+          while(fast!=NULL && fast->next!=NULL)
             {
                 slow=slow->next;
                 fast=fast->next->next;
+                
             }
-            return slow;
+        return slow;
         }
-        else
-        {
-            while(fast!=NULL && fast->next!=NULL)
-            {
-                slow=slow->next;
-                fast=fast->next->next;
-            }
-            return slow;
-        }
+ 
     
-    }
+    
 };
