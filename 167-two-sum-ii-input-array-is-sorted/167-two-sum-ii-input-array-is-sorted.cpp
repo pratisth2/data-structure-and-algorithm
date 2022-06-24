@@ -8,8 +8,8 @@ public:
         {
            // int mid=low+(high-low)/2;
            // cout<<mid;
-            cout<< numbers[low];
-            cout<<numbers[high];
+          //  cout<< numbers[low];
+          //  cout<<numbers[high];
             if(numbers[low]+numbers[high]==target)
             {
                 v.push_back(low+1);
@@ -30,7 +30,7 @@ public:
     vector<int> twoSum(vector<int>& numbers, int target) {
         int n=numbers.size();
          vector<int>v;
-        twosum2(numbers,1,n,target,v);
+        twosum2(numbers,0,n-1,target,v);
         return v;
     }
 };
