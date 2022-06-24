@@ -11,15 +11,17 @@ public:
         {
             if(height[left]<height[right])
             {
-                left++;
+                
                 maxleft=max(maxleft, height[left]);
                 water+=maxleft-height[left];
+            left++;
             }
             else
             {
-                right--;
+                
                 maxright=max(maxright,height[right]);
                  water+=maxright-height[right];   
+                right--;
             }
         }
         return water;
