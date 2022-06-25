@@ -17,7 +17,6 @@ public:
         while(i<s.size())
         {
             if(s[0]==' '  ||  !isdigit(s[i])) break;
-            
             ans=ans*10+(s[i]-'0');
             
             if(sign==-1 && (-1)*ans <MIN) return MIN;
