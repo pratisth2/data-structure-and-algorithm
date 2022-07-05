@@ -17,9 +17,10 @@ public:
             {
                 start++;
             }
-             ans=  start-nums[i];
+             ans=  start-nums[i];   // 5,6,7,8     8-5=3 
             mx=max(mx,ans);
         }
         return mx;
     }
-};
+}; 
+// TC-O(N)
